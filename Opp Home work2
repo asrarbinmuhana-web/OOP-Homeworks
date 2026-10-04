@@ -1,0 +1,51 @@
+namespace asrar2
+{      class person
+    {
+        public String Name { get; set; }
+        public person(String Name)
+        {
+            this.Name = Name;
+        }
+        public virtual void DisPlayIfo()
+        {
+            Console.WriteLine("Name:{Name}");
+        }
+        public class Student : person
+        {
+            public int StudenId { get; set; }
+            public Student(string name, int StudenId) : base(name)
+            {
+                this.StudenId = StudenId;
+            }
+            public override void DisPlayIfo()
+            {
+                Console.WriteLine($"[Student]Name:{Name},StudenID:{StudenId}");
+            }
+        }
+        public class Employee : person
+        {
+            public decimal Salary { get; set; }
+            public Employee(string name, decimal Salary) : base(name)
+            {
+                this.Salary = Salary;
+            }
+            public override void DisPlayIfo()
+            {
+                Console.WriteLine($"[Employee]Name:{Name}, Salary{ Salary:C}");
+            }
+
+            public class Teacher : person
+            {
+                public string CourseName { get; set; }
+                public Teacher(string name, string CourseName) : base(name)
+                {
+                    this.CourseName = CourseName;
+                }
+                public override void DisPlayIfo()
+                {
+                    Console.WriteLine($"[Teacher]Name:{Name}, Course:{CourseName}");
+
+
+                }
+            }
+
