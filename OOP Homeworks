@@ -1,0 +1,64 @@
+namespac
+{
+
+    class shape
+    {
+
+
+        public virtual double CalculateArea()
+        {
+            return 0;
+        }
+        class circle : shape
+        {
+            public double Radius { get; set; }
+            public circle(double radius)
+            {
+                this.Radius = Radius;
+            }
+            public override double CalculateArea()
+            {
+                return Math.PI * Radius * Radius;
+            }
+
+
+        
+        }
+    
+        class Rectangle : shape
+        {
+            public double width { get; set; }
+            public double height { get; set; }
+
+            public Rectangle(double width, double height)
+            {
+            
+               this. width = width;
+               this. height = height;
+            }
+        public override double CalculateArea()
+        {
+        
+                return width * height;
+            }
+        
+
+
+            }
+            class Program
+            {
+            static void Main(string[] args)
+            {
+
+                List<shape> shape = new List<shape>();
+
+                shape.Add(new circle(5));
+                shape.Add(new Rectangle(4, 7));
+                foreach (shape Shape in shape)
+                {
+                    Console.WriteLine($"Type:{Shape.GetType().Name},Area:{Shape.CalculateArea():F2}");
+                }
+            }
+                }
+            }
+        }
